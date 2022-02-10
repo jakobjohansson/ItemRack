@@ -67,8 +67,8 @@ function ItemRack.ProcessAutoQueue(slot)
 			break
 		else
 			if not ready or enable==0 or (ItemRackItems[candidate] and ItemRackItems[candidate].priority) then
-				-- 23046 is Sapphiron trinket
-				if ItemRack.ItemNearReady(candidate) or candidate == "23046" then
+				-- 32483 Skull of guldan
+	if ItemRack.ItemNearReady(candidate) or (candidate == "32483" and (ItemRackUser.CurrentSet == "TRASH" or ItemRackUser.CurrentSet == "TRASHTR")) then
 					if GetItemCount(candidate)>0 and not IsEquippedItem(candidate) then
 						_,bag,s = ItemRack.FindItem(list[i])
 						if bag then
